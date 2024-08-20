@@ -12,4 +12,4 @@ exporter_otlp:
   resource_attributes: []
   traces_propagators: []
 batch_span_processor:
-  max_export_batch_size: 512
+  max_export_batch_size: 256
