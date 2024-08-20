@@ -1,0 +1,56 @@
+table:
+  name: comments
+  schema: public
+object_relationships:
+  - name: post
+    using:
+      foreign_key_constraint_on: post_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+select_permissions:
+  - role: david
+    permission:
+      columns:
+        - id
+        - post_id
+        - user_id
+        - content
+        - created_at
+      filter:
+        id:
+          _eq: X-Hasura-User-Id
+  - role: jeff
+    permission:
+      columns:
+        - id
+        - post_id
+        - user_id
+        - content
+        - created_at
+      filter:
+        id:
+          _eq: X-Hasura-User-Id
+    comment: ""
+event_triggers:
+  - name: test
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: http://test
+    cleanup_config:
+      batch_size: 10000
+      clean_invocation_logs: true
+      clear_older_than: 1
+      paused: false
+      schedule: '* * * * *'
+      timeout: 60

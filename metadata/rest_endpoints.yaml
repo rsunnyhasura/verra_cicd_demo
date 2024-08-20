@@ -1,0 +1,9 @@
+- comment: ""
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: ListComments
+  methods:
+    - GET
+  name: ListComments
+  url: myquery

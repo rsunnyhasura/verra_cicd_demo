@@ -1,0 +1,3 @@
+table:
+  name: verra_demo
+  schema: public

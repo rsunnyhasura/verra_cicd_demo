@@ -1,0 +1,7 @@
+version: 3
+endpoint: https://cute-marlin-52.hasura.app
+admin_secret: c82FQh9ITxMNxnxXvUCQww1JkOYTUiH5E04Usdsr1TccMdi1ill9Cjas0PE0wp4Z
+metadata_directory: metadata
+actions:
+  kind: synchronous
+  handler_webhook_baseurl: http://localhost:3000

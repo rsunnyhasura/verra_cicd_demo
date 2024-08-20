@@ -1,0 +1,9 @@
+- name: test
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: HGE_DATABASE_URL
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include test/tables/tables.yaml"

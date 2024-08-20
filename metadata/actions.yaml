@@ -1,0 +1,12 @@
+actions:
+  - name: actionName
+    definition:
+      kind: synchronous
+      handler: http://test
+custom_types:
+  enums: []
+  input_objects:
+    - name: SampleInput
+  objects:
+    - name: SampleOutput
+  scalars: []

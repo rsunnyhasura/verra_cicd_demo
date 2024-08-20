@@ -1,0 +1,25 @@
+batch_limit:
+  global: 10
+  per_role:
+    jeff: 5
+depth_limit:
+  global: 10
+  per_role:
+    jeff: 5
+disabled: false
+node_limit:
+  global: 10
+  per_role:
+    jeff: 5
+rate_limit:
+  global:
+    max_reqs_per_min: 10
+    unique_params: null
+  per_role:
+    jeff:
+      max_reqs_per_min: 5
+      unique_params: null
+time_limit:
+  global: 20
+  per_role:
+    jeff: 5

@@ -1,0 +1,23 @@
+- name: allowed-queries
+  definition:
+    queries:
+      - name: CommentASubscriptions
+        query: |
+          subscription MySubscription {
+            comments(limit: 1, order_by: {created_at:desc}) {
+              content
+              created_at
+              id
+              post_id
+              user_id
+            }
+          }
+      - name: ListComments
+        query: |
+          query MyQuery {
+            comments(limit: 10) {
+              content
+              created_at
+              id
+            }
+          }
